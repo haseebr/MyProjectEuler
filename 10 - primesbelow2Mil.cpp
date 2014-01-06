@@ -3,16 +3,18 @@
 using namespace std;
 int main()
 {
-    int i,j,count1=0,prime=0;
-    for(i=2;prime<502;++i)
+    unsigned long long i,j,sum=0;
+    int count1=0;
+    for(i=2;i<2000000;++i)
     {
         for(j=2;j<=sqrt(i);++j)
         {
             if((i%j)==0)
-                ++count1;
+            ++count1;
         }
-        if(count1==0) {cout << i << " ";prime++;}
+
+        if(count1==0){cout << i << endl;sum+=i;}
         count1=0;
     }
-    cout << i-1;
+    cout << sum;
 }
